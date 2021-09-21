@@ -1,51 +1,49 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import TodoList from './components/Todo/TodoList';
+import CategoriesList from './components/Categories/CategoriesList';
+import Header from './components/Header';
+import { getCategories } from './service/CategoriesService';
 
 const API_URL = "http://localhost:5000";
+const HOME_TITLE = "To-Do List";
+const HOME_SUBTITLE = "Suas Listas";
 
 function App() {
 
-  const [todos, setTodos] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [newCategory, setNewCategories] = useState("");
   const [popupActive, setPopupActive] = useState(false);
-  const [newTodo, setNewTodo] = useState("");
 
   useEffect(() => {
-    GetLists();
+    setCategories(getCategories());
   }, []);
 
-  const GetLists = () => {
-    axios.get(`${API_URL}/lists`, ({ data }) => {
-      console.log(data);
-    });
-  }
-
-
   return (
-    <div className="App">
-      <h1>To-do List</h1>
-      <h4>Suas tarefas</h4>
-
-      <div className="todos">
-
-        <div className="todo">
-          <div className="checkbox"></div>
-
-          <div className="text">Fazer projeto</div>
-
-          <div className="delete-todo">x</div>
-        </div>
-
-        <div className="todo is-complete">
-          <div className="checkbox"></div>
-
-          <div className="text">Pagar os boleto</div>
-
-          <div className="delete-todo">x</div>
-        </div>
+    <Router>
+      <div className="principal">
+        <Link to="/">
+          <Header title={HOME_TITLE}/>
+        </Link>
+        <Switch>
+          <Route path="/" exact={true}>
+            <CategoriesList categories={categories} subtitle={HOME_SUBTITLE}/>
+          </Route>
+          <Route path="/lists/:id/tasks">
+            <TodoList />
+          </Route>
+        </Switch>
 
       </div>
+    </Router>
 
-    </div>
   );
 }
 
