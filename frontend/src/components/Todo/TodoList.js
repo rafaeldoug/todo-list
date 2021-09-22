@@ -4,7 +4,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { useHistory, useParams } from "react-router";
 import { getTasksByCategoryId, updateTask } from '../../service/TaskListService';
-import { getCategoryById } from '../../service/CategoriesService';
+// import { getCategoryById } from '../../service/CategoriesService';
 import './styles.css';
 
 export default function TodoList() {
@@ -20,7 +20,7 @@ export default function TodoList() {
 
   useEffect(() => {
     setTodos(getTasksByCategoryId(id));
-    setCategory(getCategoryById(id));
+    // setCategory(getCategoryById(id));
   }, [id]);
 
   const toggleCompleteTodo = (todoId) => {

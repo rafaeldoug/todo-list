@@ -1,26 +1,12 @@
-const categories = [
-  { id: 0, name: 'Faculdade' },
-  { id: 1, name: 'Trabalho' },
-  { id: 2, name: 'Aleatório' },
-  { id: 3, name: 'Família' }
-];
+// import axios from 'axios';
 
-const getCategories = () => {
-  return categories;
-};
+// const API_URL = "http://localhost:5000";
 
-// const getCategories = () => {
-//   axios.get(`${API_URL}/lists`, ({ data }) => {
-//     console.log(data);
-//   });
-
+// const getCategorias = () => {
+//   axios.get(`${API_URL}/lists`)
+//     .then(({data}) => {
+//       return data;
+//     })
 // }
 
-const getCategoryById = (id) => {
-  return categories[parseInt(id)];
-};
-
-module.exports = {
-  getCategories,
-  getCategoryById
-};
+// export default getCategorias;

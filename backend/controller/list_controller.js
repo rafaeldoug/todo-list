@@ -20,7 +20,7 @@ router.get('/:id', findById, async (req, res) => {
 });
 
 // adicionar uma nova lista
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
   res.json(await new List(req.body).save());
 });
 
@@ -31,6 +31,7 @@ router.put('/:id', findById, async (req, res) => {
 
 // remover a lista com o id especificado
 router.delete('/:id', findById, async (req, res) => {
+  console.log(req);
   req.list.remove();
   res.json({mensagem: 'Lista removido com sucesso'});
 });

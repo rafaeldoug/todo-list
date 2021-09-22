@@ -24,7 +24,7 @@ router.get('/:id', findById, async (req, res) => {
 });
 
 // adicionar um novo task
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
   res.json(await new Task(req.body).save());
 });
 

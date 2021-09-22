@@ -2,12 +2,10 @@
 const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
-  id:Number,
-  nome: String,
-  dataCriacao: Date,
-  valor: Boolean,
+  name: {type: String, required: true},
+  isComplete: {type: Boolean, default: false},
   list : [
-    {type: mongoose.Schema.Types.ObjectId,ref:'List'}
+    {type: mongoose.Schema.Types.ObjectId,ref:'List', required: true}
 ]
 }, { 
   timestamps: true 
