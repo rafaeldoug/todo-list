@@ -19,8 +19,6 @@ const HOME_SUBTITLE = "Suas Listas";
 function App() {
 
   const [categories, setCategories] = useState([]);
-  const [newCategory, setNewCategories] = useState("");
-  const [popupActive, setPopupActive] = useState(false);
 
   useEffect(() => {
     setCategories(getCategories());

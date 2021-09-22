@@ -1,15 +1,18 @@
-a {
-  text-decoration: none;
-  color: var(--light);
-  width: 100%;
-}
-
-.category-container {
+.todo-container {
   display: flex;
   flex-direction: row;
 }
 
-.category {
+.todo-list-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-list-header h4 {
+  margin-left: 12px;
+}
+
+.todo {
   position: relative;
   background-color: var(--dark);
   padding: 16px;
@@ -22,11 +25,11 @@ a {
   margin-bottom: 16px;
 }
 
-.category:hover {
+.todo:hover {
   opacity: 0.8;
 }
 
-.category .checkbox {
+.todo .checkbox {
   width: 20px;
   height: 20px;
   margin-right: 16px;
@@ -35,20 +38,20 @@ a {
   transition: 0.4s;
 }
 
-.category.is-complete .checkbox {
+.todo.is-complete .checkbox {
   background-color: var(--primary);
   background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
 }
 
-.category .text {
+.todo .text {
   font-size: 20px;
 }
 
-.category.is-complete .text {
+.todo.is-complete .text {
   text-decoration: line-through;
 }
 
-.category .delete-list {
+.todo .delete-list {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -65,7 +68,7 @@ a {
   justify-content: center;
 }
 
-.category .delete-category {
+.todo .delete-todo {
   position: absolute;
   top: 50%;
   right: 16px;

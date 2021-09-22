@@ -1,17 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import './styles.css';
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import './styles.css';
 
-export default function CategoryItem({ category }) {
+// export default function CategoryItem({ category }) {
 
-  return (
-    <Link to={`/lists/${category.id}/tasks`}>
-      <div className="todo">
-        <div className="text">{category.name}</div>
+//   return (
+//     <Link to={`/lists/${category.id}/tasks`}>
+//       <div>
+//         <div className="category">
+//           <div className="text">{category.name}</div>
 
-        <div className="delete-todo">x</div>
-      </div>
-    </Link>
-  )
+//           <div className="delete-list">x</div>
+//         </div>
 
-}
+//       </div>
+//     </Link>
+//   )
+
+// }
