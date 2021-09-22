@@ -7,6 +7,13 @@ a {
 .category-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .category {
