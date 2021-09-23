@@ -1,0 +1,82 @@
+a {
+  text-decoration: none;
+  color: var(--light);
+  width: 100%;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.category {
+  position: relative;
+  background-color: var(--dark);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.category:hover {
+  opacity: 0.8;
+}
+
+.category .checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: var(--dark-alt);
+  transition: 0.4s;
+}
+
+.category.is-complete .checkbox {
+  background-color: var(--primary);
+  background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.category .text {
+  font-size: 20px;
+}
+
+.category.is-complete .text {
+  text-decoration: line-through;
+}
+
+.category .delete-list {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+  color: var(--light);
+  background-color: #eb034c;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category .delete-category {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+  background-color: var(--light);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
