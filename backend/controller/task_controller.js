@@ -1,4 +1,3 @@
-   
 const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
@@ -10,9 +9,9 @@ const findById = async (req, res, next) => {
 };
 // criando funções de middleware
 const findByIdList = async (req, res, next) => {
-    req.task = await Task.find({List:req.params.idList});
-    next();
-  };
+  req.task = await Task.find({ listId: req.params.idList });
+  next();
+};
 // retorne todos os tasks
 router.get('/', async (req, res) => {
   res.json(await Task.find());
@@ -35,18 +34,18 @@ router.put('/:id', findById, async (req, res) => {
 
 // completar a task com o id especificado
 router.put('/:id/complete', findById, async (req, res) => {
-    res.json(await req.task.set({valor:true}).save());
-  });
+  res.json(await req.task.set({ isComplete: !req.task.isComplete }).save());
+});
 
 // retorne o tasks da lista com id especifico. 
-router.get('/:idList', findByIdList, async (req, res) => {
-    res.json(req.task);
-  });
+router.get('/lists/:idList', findByIdList, async (req, res) => {
+  res.json(req.task);
+});
 
 // remover o task com o id especificado
 router.delete('/:id', findById, async (req, res) => {
   req.task.remove();
-  res.json({mensagem: 'Task removido com sucesso'});
+  res.json({ mensagem: 'Task removido com sucesso' });
 });
 
 module.exports = router;

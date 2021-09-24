@@ -1,5 +1,4 @@
-   
-const express = require('express');
+   const express = require('express');
 const router = express.Router();
 const List = require('../model/list');
 
@@ -31,7 +30,6 @@ router.put('/:id', findById, async (req, res) => {
 
 // remover a lista com o id especificado
 router.delete('/:id', findById, async (req, res) => {
-  console.log(req);
   req.list.remove();
   res.json({mensagem: 'Lista removido com sucesso'});
 });
