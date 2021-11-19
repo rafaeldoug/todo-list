@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import SessionService from '../services/SessionService';
+import SessionService from '../service/SessionService';
 
 const SegurancaContext = React.createContext();
 

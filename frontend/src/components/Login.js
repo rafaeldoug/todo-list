@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import {useSegurancaContext} from '../contextos/SegurancaContext';
+import {useSegurancaContext} from '../context/SegurancaContext';
 
 const criaFormEmBranco = () => {
   return {

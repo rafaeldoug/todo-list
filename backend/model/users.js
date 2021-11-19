@@ -29,4 +29,4 @@ userchema.pre('save', function (next) {
 });
 
 userchema.plugin(uniqueValidator);
-module.exports = mongoose.model('Usuario', usuarioSchema);
+module.exports = mongoose.model('Usuario', userchema);

@@ -1,3 +1,5 @@
+FROM node:14.18-alpine
+
 WORKDIR /app
 # Copio o package.json => ele é quem tem as dependências
 COPY package.json .
@@ -5,7 +7,6 @@ COPY package.json .
 RUN npm install
 # Copio o restante dos arquivos
 COPY . .
-
 # Valores padrão para as variáveis de ambiente da aplicação
 # Podem ser alteradas durante a execução do container
 ENV DATABASE_URL=MUDE_ESSE_VALOR

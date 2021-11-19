@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Usuario = require('../models/users');
+const Usuario = require('../model/users');
 const ValidacaoService = require('../services/validacao-service');
 
 // Retorna todos os usuários

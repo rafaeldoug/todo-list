@@ -1,13 +1,13 @@
 version: '3.6'  
 services:
   front:
-    image: tap/todo_list_front
+    image: tap_todo_list_front
     ports:
       - "9999:80"
     depends_on:
       - back
   back:
-    image: tap/todo_list_back
+    image: tap_todo_list_back
     environment:
       - DATABASE_URL=mongodb://banco/seguranca
       - SERVER_PORT=5000

@@ -40,7 +40,7 @@ const isLoggedIn = () => {
     return false;
   }
 };
-
+// eslint-disable-next-line
 export default {
   login,
   logout,

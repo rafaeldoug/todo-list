@@ -13,8 +13,8 @@ app.use(cors());
 
 app.use('/lists', require('./controller/list_controller'));
 app.use('/tasks', require('./controller/task_controller'));
-app.use('/usuarios', require('./controllers/usuarios-controller'));
-app.use('/session',  require('./controllers/session-controller'));
+app.use('/usuarios', require('./controller/user-controller'));
+app.use('/session',  require('./controller/session-controller'));
 
 console.log("Abrindo conexão com o BD...");
 db.conecta(() => {
