@@ -4,32 +4,41 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import RotaPrivada from './componentes/RotaPrivada';
 
 import Header from './components/Header';
 import CategoriesList from './components/Categories/CategoriesList';
 import TodoList from './components/Todo/TodoList';
+import Login from './componentes/Login';
+import NaoEncontrada from './componentes/NaoEncontrada';
+import {SegurancaProvider} from './contextos/SegurancaContext';
 
 const HOME_TITLE = "To-Do List";
 
 function App() {
 
   return (
+    <SegurancaProvider>
+
     <Router>
       <div className="principal">
         <Link to="/">
           <Header title={HOME_TITLE} />
         </Link>
         <Switch>
-          <Route path="/" exact={true}>
+          <RotaPrivada path="/" exact={true}>
             <CategoriesList />
-          </Route>
-          <Route path="/tasks/lists/:id">
+          </RotaPrivada>
+          <RotaPrivada path="/tasks/lists/:id">
             <TodoList />
-          </Route>
+          </RotaPrivada>
+          <Route path="/login"><Login/></Route>
+          <Route path="*"><NaoEncontrada/></Route>
         </Switch>
 
       </div>
     </Router>
+    </SegurancaProvider>
 
   );
 }
